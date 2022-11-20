@@ -1,1 +1,20 @@
-<p>register-user works!</p>
+<div>
+    <form [formGroup]="registerForm" class="register-form">
+        <label for="username">Nome</label>
+        <input type="text" formControlName="username" placeholder="Usuário">
+
+        <label for="email">Email</label>
+        <input type="email" formControlName="email" placeholder="E-mail">
+
+        <label for="password">Senha</label>
+        <input type="password" formControlName="passwordHash" placeholder="Senha">
+
+        <label for="confirmPassword">Confirme a senha</label>
+        <input type="password" formControlName="confirmPassword" placeholder="Confirme a senha">
+
+        <label for="phoneNumber">Telefone</label>
+        <input type="tel" formControlName="phoneNumber" placeholder="Telefone">
+
+        <button class="btn btn-primary mt-4" (click)="register()" [disabled]="!registerForm.valid">Registrar</button>
+    </form>
+</div>

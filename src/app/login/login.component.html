@@ -10,11 +10,11 @@
     
         <!-- password -->
         <label for="password">Senha</label>
-        <input type="password" formControlName="password">
+        <input type="password" formControlName="passwordHash">
 
         <!-- submit -->
-        <button class="btn btn-primary mt-4" type="submit" [disabled]="!loginForm.valid">Entrar</button>
-        <p>Ou clique <a href="">aqui</a> e registre-se agora mesmo!</p>
+        <button class="btn btn-primary mt-4" (click)="login()" [disabled]="!loginForm.valid">Entrar</button>
+        <p>Ou clique <a routerLink="/register-user">aqui</a> e registre-se agora mesmo!</p>
     </form>
 
 </div>
