@@ -35,6 +35,7 @@ export class LoginComponent implements OnInit {
     this.loginService.login( this.loginForm.value ).subscribe(result => {
       console.log("login deu bom");
       console.log(result);
+      localStorage.setItem('user', JSON.stringify(result));
       this.router.navigate(['/dashboard']);
     }, error => {
       console.log(error);

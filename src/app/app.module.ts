@@ -10,6 +10,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { RegisterUserComponent } from './login/register-user/register-user.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { PetListComponent } from './pet-list/pet-list.component';
+import { PetDetailsComponent } from './pet-list/pet-details/pet-details.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +19,8 @@ import { HttpClientModule } from '@angular/common/http';
     LoginComponent,
     DashboardComponent,
     RegisterUserComponent,
+    PetListComponent,
+    PetDetailsComponent,
   ],
   imports: [
     BrowserModule,
