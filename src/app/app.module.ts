@@ -9,9 +9,10 @@ import { LoginComponent } from './login/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { RegisterUserComponent } from './login/register-user/register-user.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { PetListComponent } from './pet-list/pet-list.component';
 import { PetDetailsComponent } from './pet-list/pet-details/pet-details.component';
+import { ResponseInterceptor } from './interceptors/response-interceptor';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,13 @@ import { PetDetailsComponent } from './pet-list/pet-details/pet-details.componen
     ReactiveFormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: ResponseInterceptor,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
