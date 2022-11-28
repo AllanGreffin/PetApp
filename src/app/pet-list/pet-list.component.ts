@@ -15,6 +15,9 @@ export class PetListComponent implements OnInit {
 
   ngOnInit(): void {
     let user: User = (JSON.parse(localStorage.getItem("user") as string));
+    if(!user){
+      this.router.navigate(['/login']);
+    }
     this.petService.GetPetsByUserId(user.id).subscribe((data: any) => {
       console.log(data);
     });
