@@ -1,1 +1,39 @@
-<p>pet-details works!</p>
+<form [formGroup]="petForm">
+    <div class="form-group">
+        <label for="name">Nome</label>
+        <input type="text" class="form-control" id="name" name="name" placeholder="Name" formControlName="name">
+    </div>
+   <div class="form-group">
+        <label for="animalType">Tipo de animal</label>
+        <input type="text" class="form-control" id="animalType" placeholder="Animal Type" formControlName="animalType">
+    </div>
+    <div class="form-group">
+        <label for="breed">Raça</label>
+        <input type="text" class="form-control" id="breed" placeholder="Breed" formControlName="breed">
+    </div>
+    <div class="form-group">
+        <label for="birthDate">Data de nascimento</label>
+        <input type="text" class="form-control" id="birthDate" placeholder="Birth Date" formControlName="birthDate">
+    </div>
+    <div class="form-group">
+        <label for="weight">Peso</label>
+        <input type="text" class="form-control" id="weight" placeholder="Weight" formControlName="weight">
+    </div>
+    <div class="form-group">
+        <label for="height">Altura</label>
+        <input type="text" class="form-control" id="height" placeholder="Height" formControlName="height">
+    </div>
+    <div>
+        <label for="observation">Observação</label>
+        <input type="text" class="form-control" id="height" placeholder="observação" formControlName="observation">
+    </div>
+    <div>
+        <label for="color">Cor</label>
+        <input type="text" class="form-control" id="color" placeholder="cor" formControlName="color">
+    </div>
+    <div>
+        <label for="imageUrl">Url da imagem</label>
+        <input type="text" class="form-control" id="imageUrl" placeholder="Url da imagem" formControlName="imageUrl">
+    </div> 
+    <button (click)="print()">Teste</button>
+</form>

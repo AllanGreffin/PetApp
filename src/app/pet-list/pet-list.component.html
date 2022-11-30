@@ -1,1 +1,32 @@
-<p>pet-list works!</p>
+<div>
+    <div *ngIf="pets.length == 0">
+        Você ainda não possui Pets cadastrados.
+    </div>
+    <div *ngIf="pets.length > 0">
+        <div >
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Tipo</th>
+                        <th>Raça</th>
+                        <th>Nascimento</th>
+                        <th>Peso</th>
+                        <th>Altura</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let pet of pets">
+                        <td>{{pet.name}}</td>
+                        <td>{{pet.animalType}}</td>
+                        <td>{{pet.breed}}</td>
+                        <td>{{pet.birthDate}}</td>
+                        <td>{{pet.weight}}</td>
+                        <td>{{pet.height}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <button (click)="newPet()">Cadastrar novo Pet</button>
+</div>

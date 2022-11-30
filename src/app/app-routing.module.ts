@@ -32,6 +32,11 @@ const routes: Routes = [
     canActivate: [AuthGuard]
   },
   { 
+    path: 'pet-details/:id', 
+    component: PetDetailsComponent ,
+    canActivate: [AuthGuard]
+  },
+  { 
     path: 'pet-details', 
     component: PetDetailsComponent ,
     canActivate: [AuthGuard]

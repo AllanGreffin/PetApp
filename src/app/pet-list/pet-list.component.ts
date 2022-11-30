@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Pet } from '../models/pet.model';
 import { User } from '../models/user.model';
 import { PetService } from '../services/pet.service';
 
@@ -10,20 +11,33 @@ import { PetService } from '../services/pet.service';
 })
 export class PetListComponent implements OnInit {
 
+  pets: Pet[] = [];
+  user : User;
+
   constructor(private petService: PetService,
     private router: Router) { }
 
   ngOnInit(): void {
     let user: User = (JSON.parse(localStorage.getItem("user") as string));
+    this.user = user;
     if(!user){
       this.router.navigate(['/login']);
     }
-    this.petService.GetPetsByUserId(user.id).subscribe((data: any) => {
+    this.getPets();
+  }
+
+  getPets(){
+    this.petService.GetPetsByUserId(this.user.id).subscribe((data: any) => {
       console.log(data);
+      this.pets = data;
     });
   }
 
-  toDetails(){
-    this.router.navigate(['/pet-details']);
+  toDetails(pet: Pet){
+    this.router.navigate(["/pet-details/" + pet.id]);
+  }
+
+  newPet(){
+    this.router.navigate(["/pet-details"]);
   }
 }
