@@ -16,7 +16,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr *ngFor="let pet of pets">
+                    <tr *ngFor="let pet of pets" (click)="toDetails(pet)">
                         <td>{{pet.name}}</td>
                         <td>{{pet.animalType}}</td>
                         <td>{{pet.breed}}</td>
