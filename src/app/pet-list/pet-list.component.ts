@@ -41,7 +41,8 @@ export class PetListComponent implements OnInit {
     this.router.navigate(["/pet-details"]);
   }
 
-  deletePet(pet: Pet){
+  deletePet(event: Event, pet: Pet){
+    event.stopPropagation();
     this.petService.DeletePetById(pet.id).subscribe((data: any) => {
       this.getPets();
     });

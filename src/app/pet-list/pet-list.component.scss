@@ -12,3 +12,10 @@
     }
 }
 
+.delete{
+    color: rgb(197, 24, 24);
+    &:hover{
+        background-color: antiquewhite;
+        color: red;
+    }
+}

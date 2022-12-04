@@ -23,7 +23,7 @@
                         <td>{{pet.birthDate | date : "dd/MM/yyyy"}}</td>
                         <td>{{pet.weight}}</td>
                         <td>{{pet.height}}</td>
-                        <td (click)="deletePet(pet)">Excluir</td>
+                        <td (click)="deletePet($event, pet)"><i class="fa fa-trash delete" aria-hidden="true"></i></td>
                     </tr>
                 </tbody>
             </table>
