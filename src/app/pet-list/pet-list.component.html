@@ -1,10 +1,10 @@
-<div>
-    <div *ngIf="pets.length == 0">
+<div class="content pet-list">
+    <div *ngIf="pets.length == 0" class="no-pets">
         Você ainda não possui Pets cadastrados.
     </div>
     <div *ngIf="pets.length > 0">
         <div >
-            <table>
+            <table class="table">
                 <thead>
                     <tr>
                         <th>Nome</th>
@@ -16,7 +16,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr *ngFor="let pet of pets" (click)="toDetails(pet)">
+                    <tr *ngFor="let pet of pets" (click)="toDetails(pet)" class="pointer">
                         <td>{{pet.name}}</td>
                         <td>{{pet.animalType}}</td>
                         <td>{{pet.breed}}</td>
@@ -28,5 +28,8 @@
             </table>
         </div>
     </div>
-    <button (click)="newPet()">Cadastrar novo Pet</button>
+    <div id="btn-div">
+        <button class="btn btn-primary new-pet-btn" (click)="newPet()">Cadastrar novo Pet</button>
+    </div>
+    
 </div>

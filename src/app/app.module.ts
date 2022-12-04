@@ -13,6 +13,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { PetListComponent } from './pet-list/pet-list.component';
 import { PetDetailsComponent } from './pet-list/pet-details/pet-details.component';
 import { ResponseInterceptor } from './interceptors/response-interceptor';
+import { MenuComponent } from './menu/menu.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { ResponseInterceptor } from './interceptors/response-interceptor';
     RegisterUserComponent,
     PetListComponent,
     PetDetailsComponent,
+    MenuComponent,
   ],
   imports: [
     BrowserModule,

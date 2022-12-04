@@ -1,0 +1,14 @@
+#btn-div{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.pointer{
+    cursor: pointer;
+
+    &:hover{
+        color: #7e17d3;
+        background-color: antiquewhite;
+    }
+}
+

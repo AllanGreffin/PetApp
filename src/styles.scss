@@ -37,3 +37,10 @@ $PetApp-theme: mat.define-light-theme((
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.content{
+  margin: 0 auto;
+  width: 100%;
+  max-width: 800px;
+  padding: 0 20px;
+}
