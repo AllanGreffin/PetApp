@@ -40,4 +40,10 @@ export class PetListComponent implements OnInit {
   newPet(){
     this.router.navigate(["/pet-details"]);
   }
+
+  deletePet(pet: Pet){
+    this.petService.DeletePetById(pet.id).subscribe((data: any) => {
+      this.getPets();
+    });
+  }
 }

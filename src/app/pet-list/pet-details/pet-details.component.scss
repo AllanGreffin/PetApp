@@ -24,3 +24,14 @@ form div{
         border: 1px solid #7e17d3;
     }
 } 
+
+.btn-gray{
+    background-color: rgb(223, 185, 216);
+    color: #ffffff;
+    padding: 5px 10px;
+    margin: 10px 0;
+    &:hover{
+        background-color: #e8c2f0 !important;
+        border-radius: 10px;
+    }
+  }

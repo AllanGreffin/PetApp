@@ -20,9 +20,10 @@
                         <td>{{pet.name}}</td>
                         <td>{{pet.animalType}}</td>
                         <td>{{pet.breed}}</td>
-                        <td>{{pet.birthDate}}</td>
+                        <td>{{pet.birthDate | date : "dd/MM/yyyy"}}</td>
                         <td>{{pet.weight}}</td>
                         <td>{{pet.height}}</td>
+                        <td (click)="deletePet(pet)">Excluir</td>
                     </tr>
                 </tbody>
             </table>

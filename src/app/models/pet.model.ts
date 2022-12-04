@@ -1,14 +1,14 @@
 export class Pet{
 
-    id: null;
-    name: null;
-    animalType: null;
-    breed: null;
-    birthDate: null;
-    weight: null;
-    height: null;
-    color: null;
-    observation: null;
-    imageUrl: null;
+    id: string;
+    name: string;
+    animalType: string;
+    breed: string;
+    birthDate: string;
+    weight: string;
+    height: string;
+    color: string;
+    observation: string;
+    imageUrl: string;
     userId: string;
 }

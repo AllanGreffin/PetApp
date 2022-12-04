@@ -35,12 +35,24 @@ $PetApp-theme: mat.define-light-theme((
 
 /* You can add global styles to this file, and also import other style files */
 
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body { 
+  margin: 0; 
+  font-family: Roboto, 14px, "Helvetica Neue", sans-serif;
+  background-color: rgb(250, 244, 253) !important;
+}
 
 .content{
   margin: 0 auto;
   width: 100%;
   max-width: 800px;
   padding: 0 20px;
+  background-color: rgb(246, 226, 255);
+  height: calc(100% - 40px);
 }

@@ -1,3 +1,23 @@
 .menu{
-    padding-left: 10px;
+    padding: 2px;
+    background-color: #BEC5FE;
+    a:hover{
+        background-color: #8b4cbe;
+        color: #ffffff;
+        border-radius: 10px;
+    }
+    text-align: center;
+    a{
+        text-decoration: none;
+        font-size: 14px;
+        font-weight: 500;
+    }
+}
+
+.logo{
+    height: 40px;
+}
+
+.navbar{
+    padding-bottom: 0px;
 }
