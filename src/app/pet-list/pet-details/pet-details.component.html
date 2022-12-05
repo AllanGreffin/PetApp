@@ -35,7 +35,7 @@
     </div>
     <div>
         <label for="imageUrl">Url da imagem</label>
-        <input type="text" class="form-control" id="imageUrl" placeholder="Url da imagem" formControlName="imageUrl">
+        <input type="file" (change)="uploadImage($event)" class="form-control" id="imageUrl" placeholder="Url da imagem" formControlName="imageUrl">
     </div> 
     <button (click)="back()" class="btn btn-secundary btn-gray">Voltar</button>
     <button (click)="save()" class="btn btn-primary">Salvar</button>

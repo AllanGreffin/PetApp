@@ -64,4 +64,25 @@ export class PetDetailsComponent implements OnInit {
       });
     }
   }
+
+  convertBase64(file: any){
+    return new Promise((resolve, reject) => {
+        const fileReader = new FileReader();
+        fileReader.readAsDataURL(file);
+        fileReader.onload = () => {
+            resolve(fileReader.result);
+        };
+        fileReader.onerror = (error) => {
+            reject(error);
+        };
+    });
+};
+
+  uploadImage(event: any){
+    const file = event.target.files[0];
+    this.convertBase64(file).then((result: any) => {
+      const base64 = result;
+      this.petForm.controls['imageUrl'].setValue(base64 as string);
+    });
+  };
 }
