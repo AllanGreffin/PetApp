@@ -12,6 +12,7 @@ import { PetService } from 'src/app/services/pet.service';
 export class PetDetailsComponent implements OnInit {
 
   pet: Pet = new Pet();
+  petImg: string;
   petForm: FormGroup;
 
   constructor(private router: Router,
@@ -24,6 +25,7 @@ export class PetDetailsComponent implements OnInit {
     if(id){
       this.petService.GetPetById(id).subscribe((data: any) => {
         this.pet = data;
+        this.petImg = this.pet.imageUrl;
         this.buildForm();
       });
     }else{
@@ -45,13 +47,13 @@ export class PetDetailsComponent implements OnInit {
       birthDate: [this.pet.birthDate],
       weight: [this.pet.weight],
       height: [this.pet.height],
-      observation: [this.pet.observation],
-      imageUrl: [this.pet.imageUrl]
+      observation: [this.pet.observation]
     });
   }
 
   save(){
     this.pet = this.petForm.value;
+    this.pet.imageUrl = this.petImg
     this.pet.userId = JSON.parse(localStorage.getItem("user") as string).id;
     if(this.pet.id){
       this.petService.PutPetById(this.pet.id, this.pet).subscribe((data: any) => {
@@ -82,7 +84,7 @@ export class PetDetailsComponent implements OnInit {
     const file = event.target.files[0];
     this.convertBase64(file).then((result: any) => {
       const base64 = result;
-      this.petForm.controls['imageUrl'].setValue(base64 as string);
+      this.petImg = base64;
     });
   };
 }

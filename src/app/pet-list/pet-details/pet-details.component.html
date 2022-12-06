@@ -33,10 +33,11 @@
         <label for="color">Cor</label>
         <input type="text" class="form-control" id="color" placeholder="cor" formControlName="color">
     </div>
-    <div>
+    <div [hidden]="petImg">
         <label for="imageUrl">Url da imagem</label>
-        <input type="file" (change)="uploadImage($event)" class="form-control" id="imageUrl" placeholder="Url da imagem" formControlName="imageUrl">
+        <input #fileInput type="file" (change)="uploadImage($event)" class="form-control" id="imageUrl" placeholder="Carregue aqui sua imagem">
     </div> 
+    <img *ngIf="petImg" [src]="petImg" alt="" (click)="fileInput.click()">
     <button (click)="back()" class="btn btn-secundary btn-gray">Voltar</button>
     <button (click)="save()" class="btn btn-primary">Salvar</button>
 </form>

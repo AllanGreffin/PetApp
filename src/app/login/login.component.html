@@ -1,7 +1,7 @@
 <div>
     
     <form [formGroup]="loginForm" class="login-form">
-
+        <img src="../../../assets/images/logo-transparent.png" class="logo" alt="">
         <h2>Entre com suas credenciais para continuar</h2>
 
         <!-- username -->
@@ -13,7 +13,7 @@
         <input type="password" formControlName="passwordHash">
 
         <!-- submit -->
-        <button class="btn btn-primary mt-4" (click)="login()" [disabled]="!loginForm.valid">Entrar</button>
+        <button class="btn btn-primary mt-4 login-button" (click)="login()" [disabled]="!loginForm.valid">Entrar</button>
         <p>Ou clique <a routerLink="/register-user">aqui</a> e registre-se agora mesmo!</p>
     </form>
 
