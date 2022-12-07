@@ -15,6 +15,11 @@ export class MenuComponent implements OnInit {
   }
 
   showMenu(){
-    return this.router.url != '/login';
+    return this.router.url != '/login' && this.router.url != '/register-user';
+  }
+
+  logout(){
+    localStorage.removeItem('user');
+    this.router.navigateByUrl('/login');
   }
 }

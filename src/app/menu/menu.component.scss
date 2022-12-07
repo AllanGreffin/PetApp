@@ -21,3 +21,11 @@
 .navbar{
     padding-bottom: 0px;
 }
+
+.logout{
+    position: absolute;
+    right: 10px;
+    &:hover{
+        cursor: pointer;
+    }
+}

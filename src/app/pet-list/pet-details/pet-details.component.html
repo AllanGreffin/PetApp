@@ -3,41 +3,41 @@
 
     <div class="form-group">
         <label for="name">Nome</label>
-        <input type="text" class="form-control" id="name" name="name" placeholder="Name" formControlName="name">
+        <input type="text" class="form-control" id="name" name="name" placeholder="Nome" formControlName="name">
     </div>
    <div class="form-group">
         <label for="animalType">Tipo de animal</label>
-        <input type="text" class="form-control" id="animalType" placeholder="Animal Type" formControlName="animalType">
+        <input type="text" class="form-control" id="animalType" placeholder="Tipo de animal" formControlName="animalType">
     </div>
     <div class="form-group">
         <label for="breed">Raça</label>
-        <input type="text" class="form-control" id="breed" placeholder="Breed" formControlName="breed">
+        <input type="text" class="form-control" id="breed" placeholder="Raça" formControlName="breed">
     </div>
     <div class="form-group">
         <label for="birthDate">Data de nascimento</label>
-        <input type="date" class="form-control" id="birthDate" placeholder="Birth Date" formControlName="birthDate">
+        <input type="datetime-local" class="form-control" id="birthDate" placeholder="Data de nascimento" formControlName="birthDate">
     </div>
     <div class="form-group">
         <label for="weight">Peso</label>
-        <input type="text" class="form-control" id="weight" placeholder="Weight" formControlName="weight">
+        <input type="text" class="form-control" id="weight" placeholder="Peso" formControlName="weight">
     </div>
     <div class="form-group">
         <label for="height">Altura</label>
-        <input type="text" class="form-control" id="height" placeholder="Height" formControlName="height">
+        <input type="text" class="form-control" id="height" placeholder="Altura" formControlName="height">
     </div>
     <div>
         <label for="observation">Observação</label>
-        <input type="text" class="form-control" id="height" placeholder="observação" formControlName="observation">
+        <input type="text" class="form-control" id="height" placeholder="Observação" formControlName="observation">
     </div>
     <div>
         <label for="color">Cor</label>
-        <input type="text" class="form-control" id="color" placeholder="cor" formControlName="color">
+        <input type="text" class="form-control" id="color" placeholder="Cor" formControlName="color">
     </div>
     <div [hidden]="petImg">
         <label for="imageUrl">Url da imagem</label>
         <input #fileInput type="file" (change)="uploadImage($event)" class="form-control" id="imageUrl" placeholder="Carregue aqui sua imagem">
     </div> 
-    <img *ngIf="petImg" [src]="petImg" alt="" (click)="fileInput.click()">
+    <img [src]="petImg" alt="" (click)="fileInput.click()">
     <button (click)="back()" class="btn btn-secundary btn-gray">Voltar</button>
     <button (click)="save()" class="btn btn-primary">Salvar</button>
 </form>
